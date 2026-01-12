@@ -1,4 +1,4 @@
-@extends('Master_page')
+@extends('master_page')
 @section('title','Home')
 @section('content')
 <h1 class="text-center">Bienvenue sur notre site e-commerce</h1>
