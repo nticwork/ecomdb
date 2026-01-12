@@ -1,13 +1,12 @@
 <?php
 
+use App\Http\Controllers\ProduitController;
 use Illuminate\Support\Facades\Route;
 
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 
 
@@ -26,3 +25,10 @@ Route::get('/db-test', function () {
 Route::get('/users-test', function () {
     return User::all();
 });
+
+
+Route::get('/',[ProduitController::class,'home']);
+
+
+
+Route::get('/produits/{cat}', [ProduitController::class,'getProdByCat']) ;
