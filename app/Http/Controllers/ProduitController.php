@@ -26,7 +26,7 @@ $cat=$rq->route('cat');
 
     $produits = Produit::where('categorie', '=', $cat)->get();
 
-    return view('Produits', [
+    return view('produits', [
        'products' => $produits,
        'categorie' => $cat
        ]);
