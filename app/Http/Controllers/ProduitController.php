@@ -15,7 +15,8 @@ class ProduitController extends Controller
 
 
 
-    return view('home');
+    $produits=Produit::paginate(2);
+    return view('home', ['products' => $produits ]);
 
 }
 
