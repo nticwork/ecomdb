@@ -1,4 +1,4 @@
-@extends('Master_page')
+@extends('master_page')
 @section('title','add Produits')
 
 @section('content')
