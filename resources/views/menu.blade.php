@@ -6,11 +6,14 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="/produits/electromenager">Electromenager</a>
+          <a class="nav-link" href="/produitsr/electromenager">Electromenager</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/produits/hicking">Hicking</a>
+          <a class="nav-link" href="/produitsr/hicking">Hicking</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('create') }}">Ajouter Un nouveau Produit</a>
+          </li>
       </ul>
     </div>
   </nav>
