@@ -119,116 +119,15 @@ $imageUrl = $result['secure_url'];
      */
     public function edit(string $id)
     {
-         $produit=Produit::find($id);
-       return view('edit')->with('produit', $produit);
+        //
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(AddProductRequest $request, $id)
+    public function update(Request $request, string $id)
     {
-         $request->validated();
-
-        // récupérer les nouvelles valeurs des champs :
-        $nom=$request->input('nom');
-        $prix=$request->input('prix');
-        $categorie=$request->input('categorie');
-
-        $image='';
-
-
-
-       // récupérer l'objet Produit via l'id
-
-        $Produit=Produit::find($id);
-
-       // update with save
-
-
-
-         $Produit->nom=$nom;
-         $Produit->prix=$prix;
-         $Produit->categorie=$categorie;
-         if($request->hasFile('image')) {
-            $image=$request->file('image')->getClientOriginalName();
-/**************** upload dans cloudinary********/
-$cloudinary = new Cloudinary([
-    'cloud' => [
-        'cloud_name' => env('CLOUDINARY_CLOUD_NAME'),
-        'api_key'    => env('CLOUDINARY_API_KEY'),
-        'api_secret' => env('CLOUDINARY_API_SECRET'),
-    ],
-]);
-
-$result = $cloudinary->uploadApi()->upload(
-    $request->file('image')->getRealPath(),
-    [
-        'folder' => 'produits',
-    ]
-);
-
-$image = $result['secure_url'];
-        }else{
-            $image= $Produit->image;
-        }
-         $Produit->image=$image;
-
-
-         $Produit->save();
-
-
-
-          return back()->with('successupdate','You have successfully updated a product.');
-
-
-
-
-/*********UPLOAD PUBLIC LOCAL *********************
-
- // récupérer les nouvelles valeurs des champs :
-        $nom=$request->input('nom');
-        $prix=$request->input('prix');
-        $categorie=$request->input('categorie');
-
-        $image='';
-
-
-
-       // récupérer l'objet Produit via l'id
-
-        $Produit=Produit::find($id);
-
-       // update with save
-
-
-
-         $Produit->nom=$nom;
-         $Produit->prix=$prix;
-         $Produit->categorie=$categorie;
-         if($request->hasFile('image')) {
-            $image=$request->file('image')->getClientOriginalName();
-// enregistrer dans le dossier (public\images)
-
-
-$request->file('image')->move(public_path('imgs'), $image);
-
-        }else{
-            $image= $Produit->image;
-        }
-         $Produit->image=$image;
-
-
-         $Produit->save();
-
-
-
-
-
-
-********************************************/
-
-
+        //
     }
 
     /**
@@ -236,17 +135,6 @@ $request->file('image')->move(public_path('imgs'), $image);
      */
     public function destroy(string $id)
     {
-
-         // récupérer l'objet article via l'id
-
-         $Produit=Produit::find($id);
-
-
-         // delete with delete
-
-         $Produit->delete();
-
-         return back()->with('successdelete','You have successfully deleted a product.');
-
+        //
     }
 }

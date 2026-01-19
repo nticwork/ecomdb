@@ -60,7 +60,3 @@ Route::resource('produits', RproductController::class);
 
 
 Route::get('/produits/create',[RproductController::class,'create'])->name('create');
-
-
-
-Route::delete('/produits/{id}', [RproductController::class,'destroy'])->name('destroy');
