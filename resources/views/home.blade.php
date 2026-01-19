@@ -22,7 +22,7 @@
     <td>{{$item['prix']  }}DH</td>
     <td>
 
-       <img src="{{$item['image']}}" alt="Image " class="img-fluid" width="100"></td>
+       <img src="{{$item['image']}}" alt="Image " class="img-fluid" width="100">
 
 
     </td>
