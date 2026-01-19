@@ -19,7 +19,7 @@
 <tr>
     <td>{{$item->nom  }}</td>
     <td>{{$item['prix']  }}DH</td>
-    <td><img src="{{ asset('imgs/'.$item['image']) }}" alt="Image " class="img-fluid" width="100"></td>
+    <td>image : <img src="{{ asset('imgs/'.$item['image']) }}" alt="Image " class="img-fluid" width="100"></td>
   </tr>
 
 @endforeach
